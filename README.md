@@ -1,5 +1,4 @@
 <div align="center">
-  <h1><a href="https://mahmad.me" target="_blank">Mahmad.me</a></h1>
   My personal portfolio website to show my skills, experience, and articles I published
 </div>
 
@@ -28,27 +27,3 @@
 - `pages/*` - All other static pages.
 - `prisma/*` - My Prisma schema, which uses a Postgresql database.
 - `public/*` - Static assets including audios, fonts and images.
-
-## View and copy code of your favourite components
-[TemplatesKart website](https://templateskart.com/projects/my-website)
-
-## Running Locally
-
-```sh
-git clone https://github.com/MA-Ahmad/myPortfolio
-cd myPortfolio && yarn install
-yarn dev
-```
-
-The above commands will start the application on [http://localhost:3000/](http://localhost:3000)
-
-
-<!-- ## Screens
-### Home 
-![Home Screen](/public/assets/images/screens/home_page.png)
-### Blog
-![Skills Screen](/public/assets/images/screens/blog_page.png) -->
-
-## Cloning / Forking
-
-Please review the [LICENSE](LICENSE) and remove all of my personal information (projects, blog posts, images, etc)

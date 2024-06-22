@@ -54,8 +54,7 @@
     "**/*.js",
     "**/*.jsx",
     "**/*.ts",
-    "**/*.tsx",
-    "pages/blog/[slug].tsx"
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules"

@@ -3,8 +3,8 @@ import {
   IconButton,
   Link,
   Box,
-  Text,
-  useColorModeValue,
+  // Text,
+  // useColorModeValue,
   Flex
 } from "@chakra-ui/react";
 import siteConfig from "../../configs/site-config";

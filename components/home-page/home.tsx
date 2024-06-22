@@ -37,115 +37,115 @@ const Home: React.FC<BlogPostProps> = (props) => {
 
   return (
     <Flex direction="column" align="center">
-<Flex direction={['column', 'column', 'row']}>
-  <MotionBox
-    opacity="0"
-    initial={{
-      translateX: -150,
-      opacity: 0
-    }}
-    animate={{
-      translateX: 0,
-      opacity: 1,
-      transition: {
-        duration: ANIMATION_DURATION
-      }
-    }}
-    m="auto"
-    mb={[16, 16, 'auto']}
-  >
-    <MotionBox whileHover={{ scale: 1.2 }} rounded="full" shadow="lg">
-      <Avatar
-        size={'2xl'}
-        showBorder={true}
-        borderColor={linkColor}
-        src={'/assets/images/user_icon.png'}
-      />
-    </MotionBox>
-  </MotionBox>
-  <MotionFlex
-    position="relative"
-    ml={['auto', 'auto', 16]}
-    m={['auto', 'initial']}
-    w={['90%', '85%', '80%']}
-    maxW="800px"
-    opacity="0"
-    justify="center"
-    direction="column"
-    initial={{
-      opacity: 0,
-      translateX: 150
-    }}
-    animate={{
-      opacity: 1,
-      translateX: 0,
-      transition: {
-        duration: ANIMATION_DURATION
-      }
-    }}
-  >
-    <Box position="relative">
-      <Box position="absolute" width="full" fontSize="2xl" textAlign="center">
-        {emojis.map((item, index) => {
-          return (
-            <MotionBox
-              key={index}
-              position="absolute"
-              right="80%"
-              animate={showEmogi && emojiCounter === index ? 'show' : 'hide'}
-              variants={{
-                hide: { translateY: -80, opacity: 0 },
-                show: {
-                  translateY: [0, -40, -60],
-                  opacity: [0, 1, 0]
-                }
-              }}
-              initial="hide"
-            >
-              {item}
-            </MotionBox>
-          );
-        })}
-      </Box>
-      <MotionBox whileHover={{ translateY: -5 }} width="90vw">
-        <Header
-          underlineColor={ORANGE}
-          emoji="👋"
-          mt={0}
-          cursor="pointer"
-          width="max-content"
-          onClick={() => {
-            setEmojiCounter((prevCounter) => prevCounter + 1);
-            setShowEmoji(true);
+      <Flex direction={['column', 'column', 'row']}>
+        <MotionBox
+          opacity="0"
+          initial={{
+            translateX: -150,
+            opacity: 0
+          }}
+          animate={{
+            translateX: 0,
+            opacity: 1,
+            transition: {
+              duration: ANIMATION_DURATION
+            }
+          }}
+          m="auto"
+          mb={[16, 16, 'auto']}
+        >
+          <MotionBox whileHover={{ scale: 1.2 }} rounded="full" shadow="lg">
+            <Avatar
+              size={'2xl'}
+              showBorder={true}
+              borderColor={linkColor}
+              src={'/assets/images/user_icon.png'}
+            />
+          </MotionBox>
+        </MotionBox>
+        <MotionFlex
+          position="relative"
+          ml={['auto', 'auto', 16]}
+          m={['auto', 'initial']}
+          w={['90%', '85%', '80%']}
+          maxW="800px"
+          opacity="0"
+          justify="center"
+          direction="column"
+          initial={{
+            opacity: 0,
+            translateX: 150
+          }}
+          animate={{
+            opacity: 1,
+            translateX: 0,
+            transition: {
+              duration: ANIMATION_DURATION
+            }
           }}
         >
-          Hey!
-        </Header>
-      </MotionBox>
-    </Box>
-    <Box as="h2" fontSize="2xl" fontWeight="400" textAlign="left">
-      My name is{' '}
-      <Box as="strong" fontWeight="600">
-        Nikolay
-      </Box>{' '}
-      and I&apos;m a{' '}
-      <Box as="span" whiteSpace="pre-line">
-        Full Stack Developer specializing in&nbsp;
-      </Box>{' '}
-      <Box as="span" whiteSpace="pre-line">
-        backend development with Java Spring Boot&nbsp;
-      </Box>{' '}
-      and&nbsp;
-      <Box as="span"  whiteSpace="pre-line">
-        frontend development with Next.js and TypeScript.&nbsp;
-      </Box>
-    </Box>
-    <Box as="h2" fontSize="2xl" fontWeight="400" mt={5} textAlign="left">
-      This is my digital garden, where I write about the things I&apos;m working on and share
-      what I&apos;ve learned. 😊
-    </Box>
-  </MotionFlex>
-</Flex>
+          <Box position="relative">
+            <Box position="absolute" width="full" fontSize="2xl" textAlign="center">
+              {emojis.map((item, index) => {
+                return (
+                  <MotionBox
+                    key={index}
+                    position="absolute"
+                    right="80%"
+                    animate={showEmogi && emojiCounter === index ? 'show' : 'hide'}
+                    variants={{
+                      hide: { translateY: -80, opacity: 0 },
+                      show: {
+                        translateY: [0, -40, -60],
+                        opacity: [0, 1, 0]
+                      }
+                    }}
+                    initial="hide"
+                  >
+                    {item}
+                  </MotionBox>
+                );
+              })}
+            </Box>
+            <MotionBox whileHover={{ translateY: -5 }} width="90vw">
+              <Header
+                underlineColor={ORANGE}
+                emoji="👋"
+                mt={0}
+                cursor="pointer"
+                width="max-content"
+                onClick={() => {
+                  setEmojiCounter((prevCounter) => prevCounter + 1);
+                  setShowEmoji(true);
+                }}
+              >
+                Hey!
+              </Header>
+            </MotionBox>
+          </Box>
+          <Box as="h2" fontSize="2xl" fontWeight="400" textAlign="left">
+            My name is{' '}
+            <Box as="strong" fontWeight="600">
+              Nikolay
+            </Box>{' '}
+            and I&apos;m a{' '}
+            <Box as="span" whiteSpace="pre-line">
+              Full Stack Developer specializing in&nbsp;
+            </Box>{' '}
+            <Box as="span" whiteSpace="pre-line">
+              backend development with Java Spring Boot&nbsp;
+            </Box>{' '}
+            and&nbsp;
+            <Box as="span" whiteSpace="pre-line">
+              frontend development with Next.js and TypeScript.&nbsp;
+            </Box>
+          </Box>
+          <Box as="h2" fontSize="2xl" fontWeight="400" mt={5} textAlign="left">
+            This is my digital garden, where I write about the things I&apos;m working on and share
+            what I&apos;ve learned. 😊
+          </Box>
+        </MotionFlex>
+      </Flex>
       <MotionBox
         w="100%"
         opacity="0"
@@ -187,6 +187,7 @@ const ContentBox = ({ linkColor }) => {
       padding={4}
       align="center"
       borderLeft="4px solid"
+      borderRight="4px solid"
       borderColor={linkColor}
       color="whatsapp"
       _hover={{ shadow: 'lg' }}

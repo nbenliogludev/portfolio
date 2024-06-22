@@ -182,6 +182,7 @@ const ArticlePage: NextPage<AllBlogProps> = ({ articleContent, blogDetails }) =>
 
 const root = process.cwd();
 export const getStaticPaths: GetStaticPaths = async () => {
+  console.log('2345');
   let devData: BlogPost[] = await getDevtoPosts();
   devData = devData.filter((data) => data.canonical_url.includes('dev.to'));
   const devtoPaths = devData.map((data) => ({
@@ -206,6 +207,7 @@ const markdownToHtml = async (markdown: string) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  console.log('123');
   const devData: BlogPost[] = await getDevtoPosts();
 
   const selectedBlog = devData.filter(

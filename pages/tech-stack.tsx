@@ -17,7 +17,6 @@ import { GetStaticProps, NextPage } from 'next';
 import Section from 'components/skills/section';
 import { AiTwotoneThunderbolt, AiOutlineCloudServer } from 'react-icons/ai';
 import { BiDesktop } from 'react-icons/bi';
-import { GiSpiderWeb } from 'react-icons/gi';
 import SkillCard from 'components/skills/skill-card';
 import { skillsArray } from 'data/data';
 import Header from 'components/shared/header';
@@ -26,7 +25,7 @@ import { container, PageSlideFade } from 'components/shared/animations/page-tran
 import PageLayout from '../components/layouts/pageLayout';
 import { useLinkColor } from 'components/theme';
 import { SkillProps } from 'interfaces/interface';
-import { FaDatabase } from 'react-icons/fa';
+import { FaDatabase, FaServer} from 'react-icons/fa';
 
 const tabList = [
   {
@@ -37,12 +36,12 @@ const tabList = [
   {
     name: 'Backend Development',
     filterName: 'backend',
-    icon: BiDesktop
+    icon: FaServer
   },
   {
     name: 'Frontend Development',
     filterName: 'frontend',
-    icon: GiSpiderWeb
+    icon: BiDesktop
   },
   {
     name: 'Database',

@@ -47,6 +47,8 @@ export interface BlogPost {
   crossposted_at: null | string;
   last_comment_at: string;
   body_html: string;
+  pubDate: string;
+  link: string;
 }
 
 export interface BlogPostProps {

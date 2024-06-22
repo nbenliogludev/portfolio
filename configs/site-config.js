@@ -1,9 +1,8 @@
 import {
   FaGithub,
-  FaDev,
   FaLinkedin,
-  FaQuora,
-  FaTwitter
+  FaTwitter,
+  FaMedium
 } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 
@@ -29,6 +28,12 @@ const siteConfig = {
         label: "LinkedIn Account",
         type: "linkedin",
         icon: <FaLinkedin />
+      },
+      {
+        url: "https://medium.com/@nbenliogludev",
+        label: "Medium Account",
+        type: "Medium",
+        icon: <FaMedium />
       },
       {
         url: "mailto:nikbenlioglu@gmail.com",

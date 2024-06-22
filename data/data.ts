@@ -4,7 +4,7 @@ export const companies = [
     alt: 'NS image',
     role: 'Fullstack Bootcamp',
     skills: ['java', 'spring boot', 'typesctipy', 'next', 'redis', 'docker', 'eureka', 'microservices'],
-    period: '2023 - Present',
+    period: 'June 2024  - Present',
     logo: '/assets/images/logos/fmss-logo.jpeg'
   },
   {
@@ -12,23 +12,23 @@ export const companies = [
     alt: 'NS image',
     role: 'Frontend Developer',
     skills: ['react', 'typescript', 'redux', 'zustand', 'react query', 'tailwind', 'material ui', 'chakra ui'],
-    period: '2023 - Present',
+    period: 'August 2023 - Present',
     logo: '/assets/images/logos/alternet-logo.jpeg'
   },
   {
     title: 'Alternet',
     alt: 'BW image',
-    role: 'Backend Developer',
+    role: 'Backend Developer Intern',
     skills: ['golang', 'nginx', 'linux', 'lua'],
-    period: '2021 - 2023',
+    period: 'June 2023 - July 2023',
     logo: '/assets/images/logos/alternet-logo.jpeg'
   },
   {
     title: 'Proxolab',
     alt: 'PS image',
-    role: 'Backend Developer (intern)',
+    role: 'Backend Developer Intern',
     skills: ['golang', 'fiber', 'postgresql', 'jwt', 'microservices', 'docker'],
-    period: '2022 - 2023',
+    period: 'December 2022 - January 2023',
     logo: '/assets/images/logos/proxolab-logo.jpeg'
   },
 ];

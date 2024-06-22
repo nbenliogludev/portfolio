@@ -7,8 +7,6 @@ import {
   Badge,
   Stack,
   Link,
-  UnorderedList,
-  ListItem,
   useColorModeValue
 } from '@chakra-ui/react';
 import { MotionBox, MotionFlex } from 'components/shared/animations/motion';
@@ -17,7 +15,8 @@ import NextLink from 'next/link';
 import { useLinkColor } from 'components/theme';
 import PopularArticles from './PopularArticles';
 import { BlogPostProps } from 'interfaces/interface';
-import { newContent } from 'data/data';
+import { FaLinkedin, FaGithub, FaTwitter, FaMedium, FaEnvelope } from 'react-icons/fa'; // Import the icons
+
 
 const ANIMATION_DURATION = 0.5;
 const ORANGE = '#ff9400';
@@ -108,7 +107,7 @@ const Home: React.FC<BlogPostProps> = (props) => {
           );
         })}
       </Box>
-      <MotionBox whileHover={{ translateY: -5 }} width="max-content">
+      <MotionBox whileHover={{ translateY: -5 }} width="90vw">
         <Header
           underlineColor={ORANGE}
           emoji="👋"
@@ -130,14 +129,14 @@ const Home: React.FC<BlogPostProps> = (props) => {
         Nikolay
       </Box>{' '}
       and I&apos;m a{' '}
-      <Box as="span" whiteSpace="nowrap">
+      <Box as="span" whiteSpace="pre-line">
         Full Stack Developer specializing in&nbsp;
       </Box>{' '}
-      <Box as="span" whiteSpace="nowrap">
+      <Box as="span" whiteSpace="pre-line">
         backend development with Java Spring Boot&nbsp;
       </Box>{' '}
       and&nbsp;
-      <Box as="span" whiteSpace="nowrap">
+      <Box as="span"  whiteSpace="pre-line">
         frontend development with Next.js and TypeScript.&nbsp;
       </Box>
     </Box>
@@ -147,8 +146,6 @@ const Home: React.FC<BlogPostProps> = (props) => {
     </Box>
   </MotionFlex>
 </Flex>
-
-
       <MotionBox
         w="100%"
         opacity="0"
@@ -174,50 +171,50 @@ const Home: React.FC<BlogPostProps> = (props) => {
   );
 };
 
+const socialNetworks = [
+  { text: 'LinkedIn', link: 'https://www.linkedin.com/in/nikolay-benlioglu/', showNewTag: false, icon: FaLinkedin },
+  { text: 'GitHub', link: 'https://github.com/nbenliogludev', showNewTag: false, icon: FaGithub },
+  { text: 'Twitter', link: 'https://x.com/nbenlioglu_', showNewTag: false, icon: FaTwitter },
+  { text: 'Medium', link: 'https://medium.com/@nbenliogludev', showNewTag: false, icon: FaMedium },
+  { text: 'Email', link: 'mailto:nikbenlioglu@gmail.com', showNewTag: false, icon: FaEnvelope },
+];
+
 const ContentBox = ({ linkColor }) => {
   return (
     <Stack
       mb={10}
-      mx={[0, 0, 10]}
+      mx={[0, 0, 10]} // Responsive horizontal margin
       padding={4}
-      align="start"
+      align="center"
       borderLeft="4px solid"
       borderColor={linkColor}
-      color={'whatsapp'}
+      color="whatsapp"
       _hover={{ shadow: 'lg' }}
       backgroundColor={useColorModeValue('gray.100', '#1e2533')}
       rounded="sm"
       fontSize="md"
     >
-      <Text
-        textAlign="center"
-        color="#53c8c4"
-        fontWeight="bold"
-        fontSize={['md', 'lg']}
-        variant="gradient"
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        fromcolor="blue.400"
-        tocolor="red.500"
-      >
-        Content:
-      </Text>
-      <UnorderedList textAlign="left" paddingLeft={5} m={0}>
-        {newContent.map((content, index) => (
-          <ListItem key={index}>
-            <NextLink href={content.link} passHref>
-              <Link color={linkColor}>
-                {content.text}
-                {content.showNewTag && (
-                  <Badge ml="1" colorScheme="green">
-                    New
-                  </Badge>
-                )}
-              </Link>
-            </NextLink>
-          </ListItem>
+      <Flex direction={['column', 'column', 'row']} textAlign="left" paddingLeft={[0, 0, 5]} align="center">
+        {socialNetworks.map((network, index) => (
+          <NextLink key={index} href={network.link} passHref>
+            <Link
+              color={linkColor}
+              mx={2}
+              display="flex"
+              alignItems="center"
+              mb={[2, 2, 0]} // Responsive margin bottom
+            >
+              <Box as={network.icon} size="20px" />
+              <Text ml={2}>{network.text}</Text>
+              {network.showNewTag && (
+                <Badge ml={1} colorScheme="green">
+                  New
+                </Badge>
+              )}
+            </Link>
+          </NextLink>
         ))}
-      </UnorderedList>
+      </Flex>
     </Stack>
   );
 };

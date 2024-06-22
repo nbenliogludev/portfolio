@@ -1,5 +1,4 @@
 import useSWR from 'swr';
-import { DEVTO_API_URL } from 'data/constants';
 
 const API_URL = '/api/posts/';
 
@@ -9,37 +8,41 @@ type PostProps = {
   title: string;
   likes: number;
   views: number;
-  createdAt: Date;
+  pubDate: string;
+  description: string;
 };
 
 type PostsPayload = {
-  dbPosts: PostProps[];
+  items: PostProps[];
 };
 
 async function getPosts(): Promise<PostsPayload> {
-  const res = await fetch(API_URL);
+  const res = await await fetch(
+    "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nbenliogludev"
+  );
   return res.json();
 }
 
 export const getDbPosts = () => {
   const { data, error } = useSWR(API_URL, getPosts);
-
   return {
-    dbPosts: data?.dbPosts,
+    dbPosts: data?.items,
     isLoading: !error && !data,
     isError: error
   };
 };
 
 export const getDevtoPosts = async () => {
-  const res = await fetch(`${DEVTO_API_URL}/articles?username=${process.env.DEVTO_USERNAME}`);
+  const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nbenliogludev');
 
   if (res.status < 200 || res.status >= 300) {
     throw new Error(`Error fetching... Status code: ${res.status}, ${res.statusText}`);
   }
   const dev_posts = await res.json();
-  return dev_posts;
+  return dev_posts.items;
 };
+
+
 
 // export const getDevtoPosts = async () => {
 //   const params = { username: process.env.DEVTO_USERNAME, per_page: 1000 };

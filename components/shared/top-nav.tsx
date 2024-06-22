@@ -36,7 +36,7 @@ const webLinks = [
   // { name: 'Blog', path: '/blog' },
   // { name: 'Projects', path: '/projects' },
   { name: 'Tech Stack', path: '/tech-stack' },
-  // { name: 'Achievements', path: '/achievements' },
+  { name: 'Achievements', path: '/achievements' },
   // { name: 'Open Source', path: '/open-source' },
 ];
 
@@ -48,13 +48,13 @@ const mobileLinks = [
 ];
 
 // const dropdownLinks = [
-  // { name: 'Projects', path: '/projects' },
-  // { name: 'Tech Stack', path: '/tech-stack' },
-  // { name: 'Open Source', path: '/open-source' },
-  // { name: 'Blog', path: '/blog' },
-  // { name: 'Achievements', path: '/achievements' },
-  // { name: 'Changelog', path: '/changelog' }
-  // { name: "Developer Story", path: "/developer-story" }
+// { name: 'Projects', path: '/projects' },
+// { name: 'Tech Stack', path: '/tech-stack' },
+// { name: 'Open Source', path: '/open-source' },
+// { name: 'Blog', path: '/blog' },
+// { name: 'Achievements', path: '/achievements' },
+// { name: 'Changelog', path: '/changelog' }
+// { name: "Developer Story", path: "/developer-story" }
 // ];
 
 interface NavLinkProps {

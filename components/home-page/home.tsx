@@ -134,10 +134,10 @@ const Home: React.FC<BlogPostProps> = (props) => {
             </Box>{' '}
             <Box as="span" whiteSpace="pre-line">
               backend development with Java Spring Boot&nbsp;
-            </Box>{' '}
+            </Box>
             and&nbsp;
             <Box as="span" whiteSpace="pre-line">
-              frontend development with Next.js and TypeScript.&nbsp;
+              frontend development with TypeScript Next.js.&nbsp;
             </Box>
           </Box>
           <Box as="h2" fontSize="2xl" fontWeight="400" mt={5} textAlign="left">

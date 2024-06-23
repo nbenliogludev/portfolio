@@ -3,10 +3,12 @@ import { Box } from '@chakra-ui/react';
 import TopNav from '../shared/top-nav';
 import Footer from '../shared/footer';
 import styles from './appLayout.module.css';
+import { Analytics } from "@vercel/analytics/react"
 
 function AppLayout(props) {
   return (
     <Fragment>
+      <Analytics/>
       <TopNav />
       <DottedSvgs />
       <Box textAlign="center" fontSize="xl" w={['90%', '85%', '80%']} maxW={800} mx="auto">
